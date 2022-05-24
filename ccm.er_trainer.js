@@ -43,7 +43,7 @@
       "notations": [ "ccm.load", "./resources/resources.mjs#notations" ],
       "number": 5,
 //    "onchange": event => console.log( event ),
-      "onfinish": { "restart": true },
+      "onfinish": { "log": true, "restart": true },
 //    "onready": event => console.log( event ),
 //    "onstart": event => console.log( event ),
       "phrases": [ "ccm.load", "./resources/resources.mjs#phrases" ],
