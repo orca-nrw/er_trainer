@@ -5,6 +5,9 @@ Mit dem ER-Trainer können die Beziehungen zwischen Entitäten in einem ER-Diagr
 
 Der Trainer kann hier ausprobiert werden: https://eild-nrw.github.io/er_trainer/
 
+## Datenverarbeitung
+An keiner Stelle werden bei der Nutzung des ER-Trainers Benutzer-spezifische Daten dauerhaft gespeichert. Es handelt sich um einen reinen Selbsttest, bei dem der Lernende ein Feedback erhält, was er/sie richtig/falsch beantwortet hat.
+
 ## Hintergrundinformationen
 Der ER-Trainer wurde an der Hochschule Bonn-Rhein-Sieg im Rahmen des EILD-Projekts von André Kless entwickelt. Der ER-Trainer stammt ursprünglich vom Verbundpartner TH Köln und wurde nun als _ccmjs_-basierte Webkomponente umgesetzt, wodurch eine besonders hoher Grand an Anpassbarkeit und Integrierbarkeit für andere Lehrende erreicht wird. Zudem wurde der ER-Trainer um zahlreiche Funktionalitäten erweitert. Der ursprüngliche ER-Trainer der TH Köln hatte zunächst nur binäre Beziehungen und keinen Wechsel der Notation unterstützt.
 
