@@ -9,5 +9,4 @@ Der ER-Trainer wurde an der Hochschule Bonn-Rhein-Sieg im Rahmen des EILD-Projek
 ## Kontakt
 Wir freuen uns über jedes Feedback zum ER-Trainer und beantworten gern Ihre Fragen. Hierfür können Sie sich jederzeit (auch nach dem Ende des EILD-Projekts) an den Entwickler André Kless wenden.
 
-Email: andre.kless@h-brs.de
-Web: https://www.h-brs.de/de/inf/andre-kless
+Email: andre.kless@h-brs.de | Web: https://www.h-brs.de/de/inf/andre-kless
