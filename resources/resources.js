@@ -5,45 +5,17 @@
  */
 
 /**
- * default notations data
- * @type {Object.<string,Object>}
+ * app configuration
+ * @type {Object}
  */
-export const notations = {
-  "abrial": {
-    "key": "abrial",
-    "title": "Abrial",
-    "centered": true,
-    "comment": "Die Abrial bzw. (min,max)-Notation gibt für jeden an einer Beziehung beteiligten Entitätstyp an, mit wie vielen Entitäten auf der anderen Seite eine Entität dieses Typs mindestens und höchstens in Beziehung steht."
-  },
-  "arrow": {
-    "key": "arrow",
-    "title": "Pfeilnotation",
-    "swap": true,
-    "left": "mirrored"
-  },
-  "chen": {
-    "key": "chen",
-    "title": "Chen",
-    "swap": true,
-    "centered": true,
-    "comment": "In der Chen-Notation sind nur einfache und mehrfache Beziehungstypen (1 und N) darstellbar, da die Beziehungsmengen bei Chen nur in ihrer Maximalaussage genannt werden. Bei Phrasen die auf einen bedingten oder mehrfach bedingten Beziehungstyp hindeuten, sollte besser zu einer anderen Notation gewechselt werden."
-  },
-  "crow": {
-    "key": "crow",
-    "title": "Krähenfuß",
-    "swap": true,
-    "left": "mirrored"
-  },
-  "mc": {
-    "key": "mc",
-    "swap": true,
-    "title": "MC"
-  },
-  "uml": {
-    "key": "uml",
-    "swap": true,
-    "title": "UML"
-  }
+export const config = {
+  "css.1.1": "./resources/styles.css",
+  "feedback": true,
+  "legend": true,
+  "number": 5,
+  "retry": true,
+  "show_solution": true,
+  "shuffle": true
 };
 
 /**
@@ -248,4 +220,46 @@ export const en = {
   "submit": "Submit",
   "title": "ER-Trainer",
   "total": "total"
+};
+
+/**
+ * default notations data
+ * @type {Object.<string,Object>}
+ */
+export const notations = {
+  "abrial": {
+    "key": "abrial",
+    "title": "Abrial",
+    "centered": true,
+    "comment": "Die Abrial bzw. (min,max)-Notation gibt für jeden an einer Beziehung beteiligten Entitätstyp an, mit wie vielen Entitäten auf der anderen Seite eine Entität dieses Typs mindestens und höchstens in Beziehung steht."
+  },
+  "arrow": {
+    "key": "arrow",
+    "title": "Pfeilnotation",
+    "swap": true,
+    "left": "mirrored"
+  },
+  "chen": {
+    "key": "chen",
+    "title": "Chen",
+    "swap": true,
+    "centered": true,
+    "comment": "In der Chen-Notation sind nur einfache und mehrfache Beziehungstypen (1 und N) darstellbar, da die Beziehungsmengen bei Chen nur in ihrer Maximalaussage genannt werden. Bei Phrasen die auf einen bedingten oder mehrfach bedingten Beziehungstyp hindeuten, sollte besser zu einer anderen Notation gewechselt werden."
+  },
+  "crow": {
+    "key": "crow",
+    "title": "Krähenfuß",
+    "swap": true,
+    "left": "mirrored"
+  },
+  "mc": {
+    "key": "mc",
+    "swap": true,
+    "title": "MC"
+  },
+  "uml": {
+    "key": "uml",
+    "swap": true,
+    "title": "UML"
+  }
 };
