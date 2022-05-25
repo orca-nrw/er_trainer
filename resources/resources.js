@@ -52,30 +52,6 @@ export const notations = {
  */
 export const phrases = [
   {
-    "text": "Ein (biologischer) Elternteil ist entweder Mutter oder Vater.",
-    "entities": [ "Elternteil", "Mutter", "Vater" ],
-    "solution": [ "t", "d" ]
-  },
-  {
-    "text": "An einer Hochschule gibt es Mitarbeiter und Studenten.",
-    "entities": [ "Hochschulangehöriger", "Mitarbeiter", "Student" ],
-    "solution": [ "t", "n" ],
-    "comments": [
-      "Neben Mitarbeitern und Studenten gibt es keine anderen Personengruppen an der Hochschule.",
-      "Ein Student kann gleichzeitig auch ein Mitarbeiter (studentische Hilfskraft) und ein Mitarbeiter auch Student sein."
-    ]
-  },
-  {
-    "text": "Ein Paketbote ist in der Regel ein Angestellter von DHL, Hermes oder DPD.",
-    "entities": [ "Paketbote", "DHL", "Hermes", "DPD" ],
-    "solution": [ "p", "d" ]
-  },
-  {
-    "text": "Ein Hund kann ein Schäferhund, ein Mops oder ein Dackel sein.",
-    "entities": [ "Hund", "Schäferhund", "Mops", "Dackel" ],
-    "solution": [ "p", "n" ]
-  },
-  {
     "text": "Zu jedem Patienten gibt es eine Patientenakte.",
     "entities": [ "Patient", "Patientenakte" ],
     "relation": "hat",
@@ -195,6 +171,30 @@ export const phrases = [
       "Zu einem Vater gibt es genau eine Mutter und mindestens ein Kind.",
       "Zu einer Mutter gibt es genau einen Vater und mindestens ein Kind.",
       "Ein Kind hat genau eine Mutter und einen Vater."
+    ]
+  },
+  {
+    "text": "Ein Paketbote ist in der Regel ein Angestellter von DHL, Hermes oder DPD.",
+    "entities": [ "Paketbote", "DHL", "Hermes", "DPD" ],
+    "solution": [ "p", "d" ]
+  },
+  {
+    "text": "Ein Hund kann ein Schäferhund, ein Mops oder ein Dackel sein.",
+    "entities": [ "Hund", "Schäferhund", "Mops", "Dackel" ],
+    "solution": [ "p", "n" ]
+  },
+  {
+    "text": "Ein (biologischer) Elternteil ist entweder Mutter oder Vater.",
+    "entities": [ "Elternteil", "Mutter", "Vater" ],
+    "solution": [ "t", "d" ]
+  },
+  {
+    "text": "An einer Hochschule gibt es Mitarbeiter und Studenten.",
+    "entities": [ "Hochschulangehöriger", "Mitarbeiter", "Student" ],
+    "solution": [ "t", "n" ],
+    "comments": [
+      "Neben Mitarbeitern und Studenten gibt es keine anderen Personengruppen an der Hochschule.",
+      "Ein Student kann gleichzeitig auch ein Mitarbeiter (studentische Hilfskraft) und ein Mitarbeiter auch Student sein."
     ]
   }
 ];
