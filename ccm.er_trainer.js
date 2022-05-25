@@ -50,7 +50,7 @@
       "retry": true,
       "show_solution": true,
       "shuffle": true,
-      "de": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
+      "text": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
 //    "user": [ "ccm.start", "./libs/user/ccm.user.js" ],
       "values": [ [ "1", "c", "n", "cn" ], [ "t", "p", "d", "n" ] ]
     },
