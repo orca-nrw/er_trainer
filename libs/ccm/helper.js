@@ -4,16 +4,6 @@
  * @author André Kless <andre.kless@web.de> 2019-2022
  * @license The MIT License (MIT)
  * @version latest (8.2.0)
- * @changes
- * version 8.2.0 (28.04.2022):
- * - updated onFinish(obj,obj,obj):void - set 'unique' flag without 'user' flag for anonym result data
- * version 8.1.1 (30.03.2022):
- * - bugfix for fillForm(elem,obj):void - set no value on undefined instead of falsy
- * version 8.1.0 (23.02.2022):
- * - added appDependency(string):Array - converts the URL or the HTML embed code of an app to an app dependency
- * version 8.0.0 (07.01.2022):
- * - updated help functions for app handover
- * (for older version changes see helper-7.10.0.mjs)
  */
 
 /**

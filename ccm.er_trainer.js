@@ -24,13 +24,13 @@
         "path": "./resources/img/"
       },
       "feedback": true,
-      "helper": [ "ccm.load", "./libs/ccm/helper.mjs" ],
-      "html": [ "ccm.load", "./resources/templates.mjs" ],
+      "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
       "lang": [ "ccm.start", "./libs/lang/ccm.lang.js", {
         "active": "de",
         "translations": {
-          "de": [ "ccm.load", "./resources/resources.mjs#de" ],
-          "en": [ "ccm.load", "./resources/resources.mjs#en" ]
+          "de": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
+          "en": [ "ccm.load", { "url": "./resources/resources.js#en", "type": "module" } ]
         }
       } ],
       "legend": true,
@@ -40,17 +40,17 @@
         "closed": true,
         "buttons": ""
       } ],
-      "notations": [ "ccm.load", "./resources/resources.mjs#notations" ],
+      "notations": [ "ccm.load", { "url": "./resources/resources.js#notations", "type": "module" } ],
       "number": 5,
 //    "onchange": event => console.log( event ),
       "onfinish": { "log": true, "restart": true },
 //    "onready": event => console.log( event ),
 //    "onstart": event => console.log( event ),
-      "phrases": [ "ccm.load", "./resources/resources.mjs#phrases" ],
+      "phrases": [ "ccm.load", { "url": "./resources/resources.js#phrases", "type": "module" } ],
       "retry": true,
       "show_solution": true,
       "shuffle": true,
-      "text": [ "ccm.load", "./resources/resources.mjs#de" ],
+      "de": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
 //    "user": [ "ccm.start", "./libs/user/ccm.user.js" ],
       "values": [ [ "1", "c", "n", "cn" ], [ "t", "p", "d", "n" ] ]
     },

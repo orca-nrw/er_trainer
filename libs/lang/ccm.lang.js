@@ -2,6 +2,7 @@
  * @overview ccmjs-based web component for multilingualism
  * @author André Kless <andre.kless@web.de> 2021-2022
  * @license The MIT License (MIT)
+ * @version latest (1.1.0)
  */
 
 ( () => {
@@ -12,7 +13,7 @@
 //    "active": "en",
       "css": [ "ccm.load", "./libs/lang/resources/styles.css" ],
       "dark": false,
-      "html": [ "ccm.load", "./libs/lang/resources/templates.mjs" ],
+      "html": [ "ccm.load", { "url": "./libs/lang/resources/templates.js", "type": "module" } ],
       "languages": {
         "de": {
           "de": "Deutsch",
