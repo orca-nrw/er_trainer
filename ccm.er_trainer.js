@@ -2,6 +2,7 @@
  * @overview ccmjs-based web component for training relations in an ER diagram
  * @author André Kless <andre.kless@web.de> 2021-2022
  * @license The MIT License (MIT)
+ * @version latest (5.0.0)
  */
 
 ( () => {
