@@ -12,6 +12,6 @@ An keiner Stelle werden bei der Nutzung des ER-Trainers Benutzer-spezifische Dat
 Der ER-Trainer wurde an der Hochschule Bonn-Rhein-Sieg im Rahmen des EILD-Projekts von André Kless entwickelt. Der ER-Trainer stammt ursprünglich vom Verbundpartner TH Köln und wurde nun als _ccmjs_-basierte Webkomponente umgesetzt, wodurch eine besonders hoher Grand an Anpassbarkeit und Integrierbarkeit für andere Lehrende erreicht wird. Zudem wurde der ER-Trainer um zahlreiche Funktionalitäten erweitert.
 
 ## Kontakt
-Wir freuen uns über jedes Feedback zum ER-Trainer und beantworten gern Ihre Fragen. Hierfür können Sie sich jederzeit (auch nach dem Ende des EILD-Projekts) an den Entwickler André Kless wenden.
+Wir freuen uns über jedes Feedback und beantworten gern Ihre Fragen. Hierfür können Sie sich jederzeit (auch nach dem Ende des EILD-Projekts) an den Entwickler André Kless wenden.
 
 Email: andre.kless@h-brs.de | Web: https://www.h-brs.de/de/inf/andre-kless
