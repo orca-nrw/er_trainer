@@ -12,7 +12,7 @@ export const config = {
   "css.1.1": "./resources/styles.css",
   "feedback": true,
   "legend": true,
-  "number": 5,
+  "number": 0,
   "retry": true,
   "show_solution": true,
   "shuffle": true
@@ -353,7 +353,7 @@ export const phrases = [
     ]
   },
   {
-    "text": "In einem App Store gibt es die Anforderung, dass für jede App mindestens eine Kategorie hinterlegt sein.",
+    "text": "In einem App Store gibt es die Anforderung, dass für jede App mindestens eine Kategorie angegeben werden muss.",
     "entities": [ "App", "Kategorie" ],
     "relation": "hat",
     "solution": [ "n", "cn" ],
