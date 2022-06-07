@@ -42,7 +42,7 @@
         "buttons": ""
       } ],
       "notations": [ "ccm.load", { "url": "./resources/resources.js#notations", "type": "module" } ],
-      "number": 5,
+//    "number": 5,
 //    "onchange": event => console.log( event ),
       "onfinish": { "log": true, "restart": true },
 //    "onready": event => console.log( event ),
