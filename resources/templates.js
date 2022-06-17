@@ -11,13 +11,13 @@ export { render };
  * @param {Object} app - app instance
  * @param {Object} data - app state data
  * @param {Object.<string,Function>} events - contains all event handlers
- * @param {Object} phrase - phrase data
  * @param {number} phrase_nr - number of current phrase
  * @param {boolean} [show_solution] - reveal correct solution
  * @returns {TemplateResult} main HTML template
  */
-export function main( app, data, events, phrase, phrase_nr, show_solution ) {
+export function main( app, data, events, phrase_nr, show_solution ) {
   const notation = app.notations[ data.notation ];
+  const phrase = data.phrases[ phrase_nr - 1 ];
   const section = data.sections[ phrase_nr - 1 ];
   const heading = section.correct === undefined ? 'heading' : ( section.correct ? 'correct' : 'failed' );
   const is_binary = phrase.entities.length === 2;
@@ -99,7 +99,7 @@ export function main( app, data, events, phrase, phrase_nr, show_solution ) {
         <!-- Phrase Comments -->
         <section ?data-hidden=${ !phrase.comments || !app.feedback || section.correct !== false }>
           ${ phrase.entities.map( ( entity, i ) => html`
-            <div class="alert alert-info my-2" role="alert" ?data-hidden=${ !phrase.comments || !phrase.comments[ i ] || section.input[ i ] === section.solution[ i ] }>
+            <div class="alert alert-info my-2" role="alert" ?data-hidden=${ !phrase.comments || !phrase.comments[ i ] || section.input[ i ] === phrase.solution[ i ] }>
               ${ phrase.comments && phrase.comments[ i ] }
             </div>
           ` ) }
@@ -121,8 +121,8 @@ export function main( app, data, events, phrase, phrase_nr, show_solution ) {
           <button id="submit" type="submit" form="inputs" class="btn btn-primary m-1" ?disabled=${ section.correct !== undefined } data-lang="submit">${ app.text.submit }</input>
           <button id="retry" class="btn btn-primary m-1" @click=${ events.onRetry } ?data-hidden=${ !app.retry } ?disabled=${ show_solution || section.correct !== false } data-lang="retry">${ app.text.retry }</button>
           <button id="solution" class="btn btn-primary m-1" @click=${ events.onSolution } ?data-hidden=${ !app.show_solution } ?disabled=${ show_solution || section.correct !== false } data-lang="solution">${ app.text.solution }</button>
-          <button id="next" class="btn btn-primary m-1" @click=${ events.onNext } ?disabled=${ section.correct === undefined || phrase_nr === app.number } data-lang="next">${ app.text.next }</button>
-          <button id="finish" class="btn btn-primary m-1" @click=${ events.onFinish } ?disabled=${ !app.onfinish || section.correct === undefined || phrase_nr < app.number } data-lang="finish">${ app.text.finish }</button>
+          <button id="next" class="btn btn-primary m-1" @click=${ events.onNext } ?disabled=${ !app.skip && section.correct === undefined || phrase_nr === app.number } data-lang="${ app.skip && section.correct === undefined ? 'skip' : 'next' }">${ app.text[ app.skip && section.correct === undefined ? 'skip' : 'next' ] }</button>
+          <button id="finish" class="btn btn-primary m-1" @click=${ events.onFinish } ?disabled=${ !app.onfinish || !app.skip && section.correct === undefined || !app.anytime_finish && phrase_nr < app.number } data-lang="finish">${ app.text.finish }</button>
         </section>
 
       </div>
@@ -159,9 +159,9 @@ export function main( app, data, events, phrase, phrase_nr, show_solution ) {
           
           ${ phrase.relation ? entity( 1 ) : line( 6 ) }
           ${ phrase.relation ? connection( 1 ) : line( 5 ) }
-          <div id="relation" class="${ !is_solution && app.feedback && !phrase.relation && section.correct !== undefined && ( section.input.toString() === section.solution.toString() ? 'correct' : 'failed' ) || '' }">
+          <div id="relation" class="${ !is_solution && app.feedback && !phrase.relation && section.correct !== undefined && ( section.input.toString() === phrase.solution.toString() ? 'correct' : 'failed' ) || '' }">
             <img src="${ notation.images[ phrase.relation ? 5 : 6 ] }">
-            <div ?data-centered=${ notation.centered } ?data-down=${ !phrase.relation }>${ phrase.relation || section[ is_solution ? 'solution' : 'input' ].filter( value => value ).toString() || '' }</div>
+            <div ?data-centered=${ notation.centered } ?data-down=${ !phrase.relation }>${ phrase.relation || ( is_solution ? phrase.solution : section.input ).filter( value => value ).toString() || '' }</div>
           </div>
           ${ phrase.relation ? connection( 2 ) : line( 5 ) }
           ${ phrase.relation ? ( is_recursive ? line( 1 ) : entity( 2 ) ) : line( 7 ) }
@@ -189,7 +189,7 @@ export function main( app, data, events, phrase, phrase_nr, show_solution ) {
     function connection( nr ) {
       return nr ? html`
         <div class="${ nr > 2 ? 'vertical' : '' }">
-          <img class="${ nr === 1 && notation.left || '' }" src="${ notation.images[ app.values[ 0 ].indexOf( section[ is_solution ? 'solution' : 'input' ][ notation.swap ? ( nr > 1 ? 0 : 1 ) : nr - 1 ] ) + 1 ] }" ?data-hidden=${ !phrase.entities[ nr - 1 ] }>
+          <img class="${ nr === 1 && notation.left || '' }" src="${ notation.images[ app.values[ 0 ].indexOf( ( is_solution ? phrase.solution : section.input )[ notation.swap ? ( nr > 1 ? 0 : 1 ) : nr - 1 ] ) + 1 ] }" ?data-hidden=${ !phrase.entities[ nr - 1 ] }>
         </div>
       ` : html`<div></div>`;
     }
@@ -200,7 +200,7 @@ export function main( app, data, events, phrase, phrase_nr, show_solution ) {
      * @returns {TemplateResult}
      */
     function entity( nr ) {
-      const check = nr => section.input[ nr - 1 ] === section.solution[ nr - 1 ];
+      const check = nr => section.input[ nr - 1 ] === phrase.solution[ nr - 1 ];
       return phrase.entities[ nr - 1 ] ? html`
         <div class="entity p-3${ !is_solution && app.feedback && phrase.relation && section.correct !== undefined && ( check( nr ) && ( !is_recursive || check( 2 ) ) ? ' correct' : ' failed' ) || '' }">
           ${ phrase.entities[ nr - 1 ] }

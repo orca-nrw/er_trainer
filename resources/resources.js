@@ -9,13 +9,38 @@
  * @type {Object}
  */
 export const config = {
-  "css.1.1": "./resources/styles.css",
-  "feedback": true,
-  "legend": true,
-//"number": 5,      // Anzahl zufällig abgefragter Phrasen; keine Angabe: alle Phrasen werden abgefragt.
-  "retry": true,
-  "show_solution": true,
-  "shuffle": true
+  "css.1.1": "./resources/styles.css",  // (austauschbares) Layout
+  "feedback": true,       // Zu jeder abgeschickten Phrase gibt es ein direktes Feedback
+  "legend": true,         // Aufrufbare Legende mit einer Übersicht aller Notationen
+//"number": 5,            // Anzahl zufällig abgefragter Phrasen (keine Angabe: alle Phrasen)
+  "retry": true,          // Eine Phrase kann nachträglich korrigiert werden.
+  "skip": true,           // Eine Phrase kann übersprungen werden
+  "show_solution": true,  // Aufrufbare Musterlösung
+  "shuffle": true,        // Phrasen werden gemischt
+  "anytime_finish": true, // Neustart jederzeit möglich
+
+  // Die Ergebnisse werden offline-fähig lokal gespeichert und man kann dort weitermachen, wo man das letzte Mal aufgehört hat.
+  "data": {
+    "store": [ "ccm.store", { "name": "eild" } ],
+    "key": "er_trainer"
+  },
+  "onchange": async event => {
+    if ( event.event !== 'next' ) return;
+    const results = event.instance.getValue();
+    results.sections.pop();
+    event.instance.helper.onFinish( {
+      store: {
+        settings: { name: 'eild' },
+        key: 'er_trainer'
+      }
+    }, results );
+  },
+  "onfinish": {
+    "callback": async ( results, instance ) => {
+      await instance.data.store.del( instance.data.key );
+      instance.start();
+    }
+  }
 };
 
 /**
@@ -134,7 +159,7 @@ export const phrases = [
     ]
   },
   {
-    "text": "Beim Standesamt wird verwaltet, welche Personen miteinander verheiratet sind ist.",
+    "text": "Beim Standesamt wird verwaltet, welche Personen gerade miteinander verheiratet sind.",
     "entities": [ "Person", "Person" ],
     "relation": "verheiratet",
     "solution": [ "c", "c" ],
@@ -513,6 +538,7 @@ export const de = {
   "phrase": "Phrase",
   "retry": "Korrigieren",
   "selection": [ "Bitte auswählen", "einfach", "bedingt", "mehrfach", "bedingt mehrfach" ],
+  "skip": "Überspringen",
   "solution": "Zeige Lösung",
   "submit": "Abschicken",
   "title": "ER-Trainer",
@@ -539,6 +565,7 @@ export const en = {
   "phrase": "Phrase",
   "retry": "Retry",
   "selection": [ "Please Choose", "simple", "conditional", "many", "conditional many" ],
+  "skip": "Skip",
   "solution": "Show Solution",
   "submit": "Submit",
   "title": "ER-Trainer",
