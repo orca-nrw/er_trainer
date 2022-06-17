@@ -5,7 +5,7 @@
  * and defines the Custom Element <code>\<ccm-app\></code>.
  * @author André Kless <andre.kless@web.de> 2014-2022
  * @license The MIT License (MIT)
- * @version latest (27.3.1)
+ * @version latest (27.4.0)
  */
 
 ( () => {
@@ -70,27 +70,27 @@
         // data is not managed in IndexedDB? => abort
         if ( !that.name || that.url ) return;
 
-        // open database
-        await openDB();
-
-        // create object store
-        await createStore();
+        await openDB();       // open database
+        await createStore();  // create object store
 
         /**
          * opens ccm database if not already open
          * @returns {Promise}
          */
         function openDB() {
-
-          return new Promise( resolve => db ? resolve() : indexedDB.open( 'ccm' ).onsuccess = function () { db = this.result; resolve(); } );
-
+          return new Promise( ( resolve, reject ) => {
+            if ( db ) return resolve();
+            const idb = indexedDB.open( 'ccm' );
+            idb.onsuccess = function () { db = this.result; resolve(); }
+            idb.onerror = reject;
+          } );
         }
 
         /**
          * creates object store if not already exists
          * @returns {Promise}
          */
-        function createStore() { return new Promise( resolve => {
+        function createStore() { return new Promise( ( resolve, reject ) => {
 
           // object store already exists? => abort
           if ( db.objectStoreNames.contains( that.name ) ) return resolve();
@@ -127,6 +127,7 @@
 
           };
           request.onsuccess = resolve;
+          request.onerror = reject;
 
         } ); }
 
@@ -496,7 +497,7 @@
      * @description Returns the _ccmjs_ version.
      * @returns {ccm.types.version_nr}
      */
-    version: () => '27.3.1',
+    version: () => '27.4.0',
 
     /**
      * @summary loads resources
@@ -2040,7 +2041,7 @@
        */
       generateKey: function () {
 
-        return Date.now() + 'X' + Math.random().toString().substr( 2 );
+        return crypto.randomUUID();
 
       },
 
