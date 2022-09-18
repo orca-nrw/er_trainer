@@ -1,7 +1,7 @@
 # ER-Trainer
 
 ## Beschreibung
-Mit dem ER-Trainer werden die Kardinalitäten von Beziehungen zwischen Entitäten im ER-Diagramm trainiert. Unterstützt werden neben binären Beziehungen auch ternäre Beziehungen mit bis zu vier Entitäten, (binäre) rekursive Beziehungen und Spezialisierung/Generalisierung mit bis zu drei Sub-Entitäten. Die Beziehungen werden primär in Abrial- bzw. (min-max)-Notation dargestellt, wobei für binäre Beziehungen auch zu anderen Notationen gewechselt werden kann.
+Mit dem ER-Trainer werden die Kardinalitäten von Beziehungen zwischen Entitäten im ER-Diagramm trainiert. Unterstützt werden neben binären Beziehungen auch n-näre Beziehungen mit bis zu vier Entitäten, (binäre) rekursive Beziehungen und Spezialisierung/Generalisierung mit bis zu drei Sub-Entitäten. Die Beziehungen werden primär in Abrial- bzw. (min-max)-Notation dargestellt, wobei für binäre Beziehungen auch zu anderen Notationen gewechselt werden kann.
 
 ## Systemanforderungen
 Voraussetzung ist ein aktueller Webbrowser mit aktiviertem JavaScript.
