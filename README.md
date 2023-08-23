@@ -7,7 +7,7 @@ Mit dem ER-Trainer werden die Kardinalitäten von Beziehungen zwischen Entitäte
 Voraussetzung ist ein aktueller Webbrowser mit aktiviertem JavaScript.
 
 ## Installation
-Die Webanwendung kann über GitHub Pages ohne Installation über die folgende Web-URL genutzt werden: https://eild-nrw.github.io/er_trainer/.
+Die Webanwendung kann über GitHub Pages ohne Installation über die folgende Web-URL genutzt werden: https://orca-nrw.github.io/er_trainer/.
 
 Alternativ kann das Repository als ZIP-Datei heruntergeladen, an beliebiger Stelle entpackt und durch den Aufruf der enthaltenen `index.html` gestartet werden.
 
