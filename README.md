@@ -9,7 +9,7 @@ Voraussetzung ist ein aktueller Webbrowser mit aktiviertem JavaScript.
 ## Installation
 Die Webanwendung kann über GitHub Pages ohne Installation über die folgende Web-URL genutzt werden: https://orca-nrw.github.io/er_trainer/.
 
-Alternativ kann das Repository als ZIP-Datei heruntergeladen, an beliebiger Stelle entpackt und durch den Aufruf der enthaltenen `index.html` gestartet werden.
+Alternativ kann das Repository als ZIP-Datei heruntergeladen, auf einem beliebigen Webspace entpackt und durch den Aufruf der enthaltenen `index.html` gestartet werden.
 
 Über die Web-URL ist die Webanwendung immer auf dem neusten Stand und muss nicht von Hand aktualisiert werden. Dafür hat man bei der ZIP-Variante den Vorteil einer von GitHub unabhängigen Version mit weitreichender individueller Anpassbarkeit.
 
