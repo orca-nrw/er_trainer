@@ -19,7 +19,8 @@ export const config = {
   "shuffle": true,        // Phrasen werden gemischt
   "anytime_finish": true, // Neustart jederzeit möglich
 
-  // Die Ergebnisse werden offline-fähig lokal gespeichert und man kann dort weitermachen, wo man das letzte Mal aufgehört hat.
+  /*
+  // Wenn aktiv: Die Ergebnisse werden offline-fähig lokal gespeichert und man kann dort weitermachen, wo man das letzte Mal aufgehört hat.
   "data": {
     "store": [ "ccm.store", { "name": "eild" } ],
     "key": "er_trainer"
@@ -41,6 +42,7 @@ export const config = {
       instance.start();
     }
   }
+   */
 };
 
 /**
