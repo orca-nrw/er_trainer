@@ -8,12 +8,12 @@
 ( () => {
   const component = {
     name: 'lang',
-    ccm: './libs/ccm/ccm.js',
+    ccm: '././libs/ccm/ccm.js',
     config: {
 //    "active": "en",
-      "css": [ "ccm.load", "./libs/lang/resources/styles.css" ],
+      "css": [ "ccm.load", "././libs/lang/resources/styles.css" ],
       "dark": false,
-      "html": [ "ccm.load", { "url": "./libs/lang/resources/templates.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "././libs/lang/resources/templates.js", "type": "module" } ],
       "languages": {
         "de": {
           "de": "Deutsch",

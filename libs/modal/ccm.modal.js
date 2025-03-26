@@ -9,7 +9,7 @@
 ( () => {
   const component = {
     name: 'modal',
-    ccm: './libs/ccm/ccm.js',
+    ccm: '././libs/ccm/ccm.js',
     config: {
 //    "backdrop_close": true,
       "buttons": [
@@ -22,12 +22,12 @@
       "content": "My Content",
       "css": [ "ccm.load",
         [  // serial
-          "./libs/bootstrap-4/css/bootstrap.css",
-          "./libs/modal/resources/styles.css"
+          "././libs/bootstrap-4/css/bootstrap.css",
+          "././libs/modal/resources/styles.css"
         ]
       ],
-      "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "./libs/modal/resources/templates.js", "type": "module" } ],
+      "helper": [ "ccm.load", { "url": "././libs/ccm/helper.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "././libs/modal/resources/templates.js", "type": "module" } ],
 //    "onclose": instance => {},
       "title": "My Header"
     },

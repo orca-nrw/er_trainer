@@ -9,7 +9,7 @@
  * @type {Object}
  */
 export const config = {
-  "css.1.1": "./resources/styles.css",  // (austauschbares) Layout
+  "css.1.1": "././resources/styles.css",  // (austauschbares) Layout
   "feedback": true,       // Zu jeder abgeschickten Phrase gibt es ein direktes Feedback
   "legend": true,         // Aufrufbare Legende mit einer Übersicht aller Notationen
 //"number": 5,            // Anzahl zufällig abgefragter Phrasen (keine Angabe: alle Phrasen)

@@ -2,59 +2,60 @@
  * @overview ccmjs-based web component for training relations in an ER diagram
  * @author André Kless <andre.kless@web.de> 2021-2022
  * @license The MIT License (MIT)
- * @version latest (6.0.0)
+ * @version 6.0.0
+ * @domain https://orca-nrw.github.io/er_trainer/
  */
 
 ( () => {
   const component = {
     name: 'er_trainer',
-    ccm: './libs/ccm/ccm.js',
+    ccm: '././libs/ccm/ccm.js',
     config: {
 //    "anytime_finish": true,
       "css": [ "ccm.load",
         [  // serial
-          "./libs/bootstrap-5/css/bootstrap.css",
-          "./resources/styles.css"
+          "././libs/bootstrap-5/css/bootstrap.css",
+          "././resources/styles.css"
         ],
-        { "url": "./libs/bootstrap-5/css/bootstrap-fonts.css", "context": "head" }
+        { "url": "././libs/bootstrap-5/css/bootstrap-fonts.css", "context": "head" }
       ],
 //    "data": { "store": [ "ccm.store" ] },
       "default": {
         "format": "svg",
         "images": [ "e", "1", "c", "n", "cn", "r", "s" ],
         "notation": "abrial",
-        "path": "./resources/img/"
+        "path": "././resources/img/"
       },
       "feedback": true,
-      "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
-      "lang": [ "ccm.start", "./libs/lang/ccm.lang.js", {
+      "helper": [ "ccm.load", { "url": "././libs/ccm/helper.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "././resources/templates.js", "type": "module" } ],
+      "lang": [ "ccm.start", "././libs/lang/ccm.lang.js", {
         "active": "de",
         "translations": {
-          "de": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
-          "en": [ "ccm.load", { "url": "./resources/resources.js#en", "type": "module" } ]
+          "de": [ "ccm.load", { "url": "././resources/resources.js#de", "type": "module" } ],
+          "en": [ "ccm.load", { "url": "././resources/resources.js#en", "type": "module" } ]
         }
       } ],
       "legend": true,
-      "modal": [ "ccm.start", "./libs/modal/ccm.modal.js", {
+      "modal": [ "ccm.start", "././libs/modal/ccm.modal.js", {
         "backdrop_close": true,
         "content": "",
         "closed": true,
         "buttons": ""
       } ],
-      "notations": [ "ccm.load", { "url": "./resources/resources.js#notations", "type": "module" } ],
+      "notations": [ "ccm.load", { "url": "././resources/resources.js#notations", "type": "module" } ],
 //    "number": 5,
 //    "onchange": event => console.log( event ),
       "onfinish": { "log": true, "restart": true },
 //    "onready": event => console.log( event ),
 //    "onstart": event => console.log( event ),
-      "phrases": [ "ccm.load", { "url": "./resources/resources.js#phrases", "type": "module" } ],
+      "phrases": [ "ccm.load", { "url": "././resources/resources.js#phrases", "type": "module" } ],
       "retry": true,
       "skip": true,
       "show_solution": true,
       "shuffle": true,
-      "text": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ],
-//    "user": [ "ccm.start", "./libs/user/ccm.user.js" ],
+      "text": [ "ccm.load", { "url": "././resources/resources.js#de", "type": "module" } ],
+//    "user": [ "ccm.start", "././libs/user/ccm.user.js" ],
       "values": [ [ "1", "c", "n", "cn" ], [ "t", "p", "d", "n" ] ]
     },
     Instance: function () {
