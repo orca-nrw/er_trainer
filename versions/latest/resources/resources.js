@@ -12,6 +12,8 @@ export const config = {
   "css.1.1": "https://orca-nrw.github.io/er_trainer/versions/latest/resources/styles.min.css",  // (austauschbares) Layout
   "feedback": true,       // Zu jeder abgeschickten Phrase gibt es ein direktes Feedback
   "legend": true,         // Aufrufbare Legende mit einer Übersicht aller Notationen
+  "license": true,        // Lizenzhinweise, die unter der App dargestellt werden.
+  "logos": "./resources/img/logos.jpg",  // Logos, die unter der App dargestellt werden.
 //"number": 5,            // Anzahl zufällig abgefragter Phrasen (keine Angabe: alle Phrasen)
   "retry": true,          // Eine Phrase kann nachträglich korrigiert werden.
   "skip": true,           // Eine Phrase kann übersprungen werden
